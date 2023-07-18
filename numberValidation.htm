@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+function validateFunc(){
+    var input=document.getElementById("phoneNumber").value;
+    var pattern=/^[0-9]+$/;
+    if (input.match(pattern)){
+        document.getElementById("message").innerHTML=" &#10003;"
+        document.getElementById('phoneNumber').style.backgroundColor="white"
+        document.getElementById("message").style.color= "#18ca07";
+        document.getElementById("btn").disabled=false;
+        return true;
+
+    }
+    else{
+        document.getElementById("message").innerHTML=" Enter a Numeric Characters only";
+        document.getElementById("message").style.color="red";
+        document.getElementById('phoneNumber').style.border="solid red 5px "
+        document.getElementById("btn").disabled=true;
+       return false;
+    }
+}
+
+    </script>
+    <form action="">
+Enter your Phone Number:
+<input type="tel" id="phoneNumber" autocomplete="off" oninput="validateFunc()"  required><span id="message"> </span>
+<br>
+<input type="submit" value="submit" id="btn" >
+    </form>
+    
+</body>
+</html>
